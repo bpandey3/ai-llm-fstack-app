@@ -14,6 +14,9 @@ langchain-core = "*"
 tweepy = "*"
 flask = "*"
 streamlit = "*"
+pytest = "*"
+pytest-mock = "*"
+pytest-cov = "*"
 
 [dev-packages]
 
