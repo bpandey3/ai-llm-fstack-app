@@ -1,0 +1,11 @@
+cookiecutter-llm-template/
+├── {{cookiecutter.app_name}}/
+│   ├── main.py
+│   ├── persona_config.yaml
+│   ├── ui/
+│   └── backend/
+├── Dockerfile
+├── requirements.txt
+└── README.md
+
+
