@@ -1,11 +1,17 @@
 import os
 import shutil
 
-lambda_name = os.environ['COOKIECUTTER_lambda_name']
-base_dir = os.path.abspath(os.path.join(os.getcwd(), '..', '..', 'genai-lambda-base', 'lambdas'))
-target_path = os.path.join(base_dir, lambda_name)
+def move_lambda_to_lambdas():
+    lambda_name = os.environ["COOKIECUTTER_lambda_name"]
+    project_dir = os.getcwd()
+    src_path = os.path.join(project_dir, lambda_name)
+    dest_dir = os.path.join(project_dir, "lambdas")
+    dest_path = os.path.join(dest_dir, lambda_name)
 
-os.makedirs(target_path, exist_ok=True)
+    os.makedirs(dest_dir, exist_ok=True)
 
-# copy rendered files from current dir to the target folder
-shutil.copyfile('index.py', os.path.join(target_path, 'index.py'))
+    # Move the folder into lambdas/
+    shutil.move(src_path, dest_path)
+
+if __name__ == "__main__":
+    move_lambda_to_lambdas()
